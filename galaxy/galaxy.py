@@ -1,7 +1,11 @@
 def build_galaxy(bookmarks):
-    """Build galaxy map from bookmarks list"""
-    print("GALAXY - build galaxy...", bookmarks)
+    """
+    Build galaxy map
 
+    :param bookmarks: list of bookmarks
+    :return: None
+    """
+    print("GALAXY - build galaxy - bookmarks:", bookmarks)
 
-if __name__ == "__main__":
-    build_galaxy()
+# if __name__ == "__main__":
+#     pass
