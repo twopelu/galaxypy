@@ -16,6 +16,7 @@ def read_bookmarks(file):
             bookmark = parse_bookmark(line)
             if bookmark:
                 bookmarks.append(bookmark)
+    print("GALAXY - read bookmarks - total:", len(bookmarks))
     return bookmarks
 
 
@@ -26,9 +27,9 @@ def parse_bookmark(string):
     :param string: line of the bookmarks file representing an html element
     :return: if the line is a bookmark return the href attribute; else None
     """
-    matches = re.findall(r'<A HREF=.+?"', string)
-    if matches:
-        return matches[0].split('"')[1]
+    match = re.search(r'<A HREF=.+?"', string)
+    if match:
+        return match.group(0).split('"')[1]
     else:
         return None
 
